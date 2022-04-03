@@ -1,0 +1,392 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    box-shadow: none;
+    font-family: 'Raleway', sans-serif;
+    scroll-behavior: smooth;
+    scroll-padding-top: 72px;
+}
+
+
+
+:root {
+    /* Nord color color scheme*/
+    --cinza-1: #14171b;
+    --cinza-2: #282c35;
+    --cinza-3: #262931;
+    --cinza-4: #212329;
+    --cinza-5: #353842;
+    --cinza-6: #0b0c0e;
+    --cinza-7: #353535;
+    --cinza-8: #0f1013;
+    --cinza-9: #1c1e24;
+    --cinza-10: #121316;
+    --cinza-11: #1b1c20;
+    --cinza-trsp: rgba(51, 51, 51, 0.75);
+    --cinza-trsp-2: rgba(29, 32, 39, 0.75);
+    --branco-1: #eceff4;
+    --branco-2: #b9bbc0;
+    --preto-trsp: rgba(0, 0, 0, 0.75);
+    --vermelho-1: #ee2929;
+    --vermelho-2: #8f1616;
+    --vermelho-3: #ff4848;
+    --azul-1: #0046ab;
+    --azul-2: #002c69;
+    --azul-3: #a3caff;
+    --azul-4: #3287ff;
+    --amarelo-1: #ffcc41;
+    --amarelo-2: #fff7c8;
+}
+
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 72px;
+    background-color: var(--preto-trsp);
+    /* backdrop-filter: blur(16px); */
+    color: var(--branco-1);
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    transition: 400ms;
+}
+.navbar .logo {
+    color: var(--branco-1);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    margin-right: 48px;
+    transition: 300ms;
+}
+.navbar .logo:hover {
+    color: var(--vermelho-1);
+}
+.navbar .menu-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    margin: 0 8px;
+    transition: 200ms;
+    border-radius: 4px;
+}
+.navbar .menu-btn:hover {
+    background-color: var(--cinza-trsp);
+}
+.navbar .menu-btn .bi {
+    font-size: 2em;
+    color: var(--branco-1);
+}
+.navbar .nav-list {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 72px;
+    background-color: var(--preto-trsp);
+    height: calc(100vh - 72px);
+    transition: 400ms;
+    width: 250px;
+    left: -250px;
+}
+.navbar .nav-list a {
+    color: var(--branco-1);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: 250ms;
+    transition: 300ms;
+    padding: 12px;
+}
+.navbar .nav-list a:hover {
+    background-color: var(--cinza-trsp);
+}
+.navbar .nav-list.on {
+    left: 0;
+}
+.navbar .nav-list.on a {
+    border-left: 4px solid transparent;
+    border-radius: 0;
+    padding: 10px;
+}
+.navbar .nav-list.on a:hover {
+    border-left: 4px solid var(--vermelho-1);
+    color: var(--vermelho-3);
+}
+.navbar.nav-style-1 {
+    background-color: var(--cinza-9);
+}
+.navbar.nav-style-1 .logo:hover {
+    color: var(--amarelo-1);
+}
+.navbar.nav-style-1 .nav-list {
+    background-color: var(--cinza-9);
+}
+.navbar.nav-style-1 .nav-list a:hover {
+    color: var(--amarelo-1);
+    border-left: 4px solid var(--amarelo-1);
+    background-color: var(--cinza-5);
+}
+.navbar.nav-style-2 {
+    background-color: var(--cinza-10);
+}
+.navbar.nav-style-2 .logo:hover {
+    color: var(--azul-4);
+}
+.navbar.nav-style-2 .nav-list {
+    background-color: var(--cinza-10);
+}
+.navbar.nav-style-2 .nav-list a:hover {
+    color: var(--azul-4);
+    border-left: 4px solid var(--azul-4);
+    background-color: var(--cinza-11);
+}
+
+
+
+#perfil {
+    background: linear-gradient(35deg, rgba(0,0,0,0.8),rgba(0, 0, 0, 0.8)), url(../images/bg.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding-top: 72px;
+}
+#perfil .caixa {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cinza-6);
+    border-radius: 20px;
+    justify-content: space-around;
+    width: 350px;
+    height: 550px;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid var(--cinza-7);
+    position: relative;
+    transition: 400ms;
+}
+#perfil .caixa:hover {
+    transform: scale(105%);
+    box-shadow: 0 0 75px;
+}
+#perfil .caixa .foto {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    border-radius: 50%;
+    margin-top: auto;
+}
+#perfil .caixa .texto {
+    color: var(--branco-1);
+    text-align: center;
+    padding: 32px;
+}
+#perfil .caixa .texto h1 {
+    font-size: 38px;
+    color: var(--vermelho-1);
+    margin-bottom: 8px;
+}
+#perfil .caixa .texto p {
+    margin-bottom: 48px;
+    font-style: italic;
+}
+#perfil .caixa .texto .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#perfil .caixa .texto .links a {
+    font-size: 28px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--branco-1);
+    text-decoration: none;
+    transition: 300ms;
+}
+#perfil .caixa .texto .links a:hover {
+    color: var(--vermelho-1);
+    transform: scale(115%) translateY(-4px);
+}
+#perfil .caixa .texto .links a i {
+    margin: auto;
+    display: flex;
+}
+#perfil .caixa .btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+}
+#perfil .caixa .btn a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--branco-1);
+    font-weight: 500;
+    font-size: 15px;
+    width: 100%;
+    height: 48px;
+    background-color: var(--vermelho-1);
+    font-weight: 600;
+    transition: 200ms;
+}
+#perfil .caixa .btn a.btn-portfolio {
+    border-left: 2px solid var(--vermelho-2);
+}
+#perfil .caixa .btn a:hover {
+    background-color: var(--vermelho-2);
+}
+
+
+
+#apresentacao {
+    text-align: center;
+    background-color: var(--cinza-8);
+    width: 100%;
+    padding: 64px 96px;
+    color: var(--branco-1);
+    height: calc(100vh - 72px);
+}
+#apresentacao h1 {
+    font-size: 48px;
+    margin-bottom: 42px;
+    margin-bottom: 64px;
+}
+#apresentacao .bloco {
+    display: flex;
+    flex-direction: column;
+}
+#apresentacao .bloco p {
+    margin-bottom: 96px;
+}
+#apresentacao .bloco .habilidades {
+    display: flex;
+    justify-content: center;
+}
+#apresentacao .bloco .habilidades .unidade {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 300px;
+    height: 375px;
+    background-color: var(--cinza-4);
+    border-radius: 8px;
+    margin: 32px;
+    padding: 32px;
+    border: 2px solid var(--cinza-5);
+    transition: 300ms;
+}
+#apresentacao .bloco .habilidades .unidade:hover {
+    transform: scale(110%) translateY(-32px);
+    box-shadow: 0 0 48px black;
+}
+#apresentacao .bloco .habilidades .unidade i {
+    font-size: 72px;
+    margin-bottom: 28px;
+    color: var(--amarelo-1);
+}
+#apresentacao .bloco .habilidades .unidade h3 {
+    margin-bottom: auto;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--amarelo-1);
+}
+#apresentacao .bloco .habilidades .unidade p {
+    margin-bottom: auto;
+    color: var(--amarelo-2);
+}
+
+
+
+#portfolio {
+    background-color: var(--cinza-9);
+    width: 100%;
+    /* height: calc(100vh - 72px); */
+    color: var(--branco-1);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 64px 96px;
+}
+#portfolio h1 {
+    color: var(--branco-1);
+    font-size: 48px;
+    margin-bottom: 64px;
+}
+#portfolio .caixas {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+}
+#portfolio .caixas .caixa {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    border-radius: 16px;
+    background-color: var(--cinza-1);
+    margin: 8px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 300ms;
+}
+#portfolio .caixas .caixa:hover {
+    transform: scale(105%) translateY(-8px);
+    box-shadow: 0 0 48px black;
+}
+#portfolio .caixas .caixa:hover p {
+    background-color: var(--azul-2);
+    color: var(--branco-2);
+}
+#portfolio .caixas .caixa p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    background-color: var(--azul-1);
+    color: var(--branco-1);
+    font-weight: 600;
+    transition: 300ms;
+}
+#portfolio .caixas .caixa p b {
+    color: var(--azul-3);
+    margin-left: 4px;
+}
+#portfolio .caixas .caixa img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+}
+
+
+footer {
+    width: 100%;
+    height: 200px;
+    background-color: var(--cinza-2);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: var(--branco-1);
+}
+footer p {
+    margin-bottom: 32px;
+}
